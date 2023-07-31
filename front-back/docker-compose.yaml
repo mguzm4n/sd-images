@@ -1,0 +1,20 @@
+version: "3"
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    environment:
+      BACKEND_URL: http://back:5000
+    ports:
+      - "80:80"
+    depends_on:
+      - back
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile  
+    environment:
+      MONGO_IP: 20.226.46.145
+    ports:
+      - "5000:5000"
