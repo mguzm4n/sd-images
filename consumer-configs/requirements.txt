@@ -1,0 +1,3 @@
+pyspark==3.0.2
+kafka-python
+pymongo==4.4.0
